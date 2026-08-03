@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --accent: #e63946; /* original colour #00eaff */
+    --accent: #e63946; /* the horizontal line under the northbyte logo*/
+}
+
+body {
+  background: #0a0a0a;
+  color: #e6e6e6;
+  font-family: 'Acme', sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0f0f0f;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-line);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  background: url('virus.png');
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 38px;      /* 4rem */
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: white;
+}
+
+.top-nav a {
+  color: #e6e6e6;
+  margin-left: 25px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.top-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  width: 230px;
+  height: 100%;
+  background: #111;
+  padding: 25px;
+  border-right: 2px solid var(--accent);
+
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
+.sidebar:hover {
+  transform: translateX(0);
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 20px;
+  height: calc(100vh - 90px);
+  z-index: 999;
+}
+
+.sidebar-container:hover .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar-container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 50%;
+  width: 4px;
+  height: 80px;
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+}
+
+.sidebar a {
+  display: block;
+  color: #e6e6e6;
+  padding: 12px 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.side-title {
+  color: #00ff88;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.content {
+  padding-top: 90px;
+}
+
+.page-content {
+    padding: 40px;
+}
+
+.slideshow {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  height: 500px;
+}
+
+.slide {
+  position: relative;
+  display: none;
+  height: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-info {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+
+  padding: 25px;
+  width: 350px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-info h2 {
+  font-size: 30px;
+  color: var(--accent);
+}
+
+.hero-info p {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: 16px;
+}
+
+.hero-buy {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: flex-start;
+    align-items: center;
+    text-align: center;
+
+    padding: 12px 24px;
+
+    background: var(--accent);
+    color: white;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+}
+
+.hero-buy:hover {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.slide-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #444;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--accent);
+}
+
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 35px;
+  justify-content: center;
+}
+
+.card {
+  background: #151515;
+  padding: 25x;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+.buy {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 10px 15px;
+  background: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+}
+
+.buy:hover {
+  background: #ffffff;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+  font-size: 14px;
+}
+  
+.support-box,
+.faq-box {
+    background: #151515;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.support-box h3,
+.faq-box h3 {
+    color: var(--accent);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.support-box p {
+    color: #ccc;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.support-text {
+    margin-top: 20px;
+}
+
+details {
+    background: #111;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+summary {
+    color: #00ff88;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+details p {
+    color: #ccc;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.about {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 35px;
+
+    background: #151515;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--accent);
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.about p {
+    color: #cfcfcf;
+    font-size: 18px;
+    line-height: 1.7;
+}
