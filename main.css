@@ -8,9 +8,11 @@
   box-sizing: border-box;
 }
 
+#86CDE3
+
 :root {
-    --accent: #3992e6; /* original colour #00eaff */
-    --accent: #3992e6; /* the horizontal line under the northbyte logo*/
+    --accent:#86CDE3; /* original colour #00eaff */
+    --accent:#86CDE3; /* the horizontal line under the northbyte logo*/
 }
 
 .about-NorthByte {
