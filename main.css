@@ -10,8 +10,8 @@
 
 
 :root {
-    --accent:#2dbeea; /* original colour #00eaff */
-    --accent:#2dbeea; /* the horizontal line under the northbyte logo*/
+    --accent:#2dbeea; 
+    --accent-line:#2dbeea; 
 }
 
 .about-NorthByte {
@@ -37,6 +37,7 @@ body {
   align-items: center;
   border-bottom: 2px solid var(--accent-line);
   z-index: 1000;
+  height: 80%;
 }
 
 .logo {
