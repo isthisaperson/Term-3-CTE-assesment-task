@@ -8,13 +8,53 @@
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-items");
+let total = 0;
 
-function addToCart(name, price, img) {
-    cart.push({ name, price, img });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(name + " added to cart!");
+function updateCart() {
+    container.innerHTML = "";
+    total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        container.innerHTML += `
+            <div style="background:#151515;padding:20px;margin-bottom:15px;border-radius:10px;">
+                <img src="${item.img}" style="height:120px;object-fit:cover;">
+                <h3 style="color:#00eaff;margin-top:10px;">${item.name}</h3>
+                <p style="color:#ccc;">$${item.price.toFixed(2)}</p>
+                <button onclick="removeItem(${index})"
+                    style="margin-top:10px;padding:8px 12px;background:#ff3b3b;color:white;border:none;border-radius:6px;cursor:pointer;">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+
+    document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
 }
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+function payNow() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    alert("Payment successful! Thank you for buying FrostByte games.");
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+updateCart();
 </script>
+
 
 <body>
 
@@ -26,10 +66,12 @@ function addToCart(name, price, img) {
     <nav class="top-nav">
         <a href="store.html">Store</a>
         <a href="support.html">Support</a>
+        <a href="checkout.html">Checkout</a>
     </nav>
 </header>
 
-<div style="padding: 10px;"></div>
+<div style="padding-top: 100px;"></div>
+
 
 <div class="sidebar-container">
     <aside class="sidebar">
@@ -53,7 +95,7 @@ function addToCart(name, price, img) {
         </div> 
 
         <div class="card">
-            <img src="windoge.png">
+            <img src="FireyFrostBytesWindogeForAvinashIndrajith.png">
             <h3>HDD Corruption</h3>
             <p>Repair corrupted drives, fight malware, and restore data.</p>
             <span class="stock-tag out">Unavailable</span>
