@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - FrostByte Games</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<h2 class="section-title">Your Cart</h2>
+
+<div id="cart-items" style="max-width:600px;margin:auto;"></div>
+
+<h3 id="total" style="text-align:center;color:#00eaff;margin-top:20px;"></h3>
+
+<div style="text-align:center;margin-top:30px;">
+    <a class="buy" onclick="alert('Payment system not implemented yet!')">Pay Now</a>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-items");
+let total = 0;
+
+cart.forEach(item => {
+    total += item.price;
+
+    container.innerHTML += `
+        <div style="background:#151515;padding:20px;margin-bottom:15px;border-radius:10px;">
+            <img src="${item.img}" style="height:120px;object-fit:cover;">
+            <h3 style="color:#00eaff;margin-top:10px;">${item.name}</h3>
+            <p style="color:#ccc;">$${item.price.toFixed(2)}</p>
+        </div>
+    `;
+});
+
+document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+</script>
+
+</body>
+</html>
