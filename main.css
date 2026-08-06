@@ -37,7 +37,7 @@ body {
   align-items: center;
   border-bottom: 2px solid var(--accent-line);
   z-index: 1000;
-  height: 80px;
+  height: 90px;
 }
 
 .logo {
