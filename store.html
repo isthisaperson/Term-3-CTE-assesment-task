@@ -11,6 +11,12 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let container = document.getElementById("cart-items");
 let total = 0;
 
+function addToCart(name, price, img) {
+    cart.push({ name: name, price: price, img: img });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
 function updateCart() {
     container.innerHTML = "";
     total = 0;
@@ -126,6 +132,8 @@ updateCart();
     </div>
 
 </main>
+
+<hr>
 
 <footer>
     <p>© 2026 FrostByte Games. All rights reserved.</p>

@@ -277,47 +277,62 @@ body {
 
 .card {
   background: #151515;
-  padding: 25x;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   transition: 0.25s;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(45, 190, 234, 0.18);
 }
 
 .card img {
-  height: 180px;
+  width: 100%;
+  height: 190px;
   object-fit: cover;
   display: block;
 }
 
 .card h3 {
-  margin-top: 15px;
-  font-size: 20px;
+  margin: 16px 18px 6px;
+  font-size: 19px;
   color: var(--accent);
-  text-align: center;
+  text-align: left;
 }
 
 .card p {
-  margin-top: 10px;
+  margin: 0 18px 12px;
   font-size: 14px;
-  color: #ccc;
-  text-align: center;
+  color: #aaa;
+  text-align: left;
+  line-height: 1.5;
+}
+.price {
+  display: block;
+  margin: 0 18px 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #00eaff;
 }
 
 .buy {
-  margin-top: 15px;
-  display: inline-block;
-  padding: 10px 15px;
+  display: block;
+  margin: 0 18px 18px;
+  padding: 11px 0;
+  text-align: center;
+  width: calc(100% - 36px);
   background: var(--accent);
   color: #000;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 15px;
-  text-align: center;
-  align-self: center;
-  align-items: center;
 }
 
 .buy:hover {
@@ -430,7 +445,21 @@ details p {
 }
 
 .buy.disabled {
-    background: #555;
-    color: #ccc;
+    background: #2a2a2a;
+    color: #666;
     pointer-events: none;
+}
+.card .stock-tag.out ~ .price {
+    color: #666;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: var(--accent);
+  margin: 30px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
