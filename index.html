@@ -175,7 +175,52 @@
       }
 
       setInterval(nextSlide, 5000);
+    let miniCart = document.getElementById("mini-cart");
+let miniToggle = document.getElementById("mini-cart-toggle");
+
+miniToggle.onclick = () => {
+    if (miniCart.style.right === "0px") {
+        miniCart.style.right = "-350px";
+    } else {
+        miniCart.style.right = "0px";
+    }
+};
+
+function loadMiniCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let box = document.getElementById("mini-cart-items");
+    box.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        box.innerHTML += `
+            <div>
+                <img src="${item.img}">
+                <h4>${item.name}</h4>
+                <p>$${item.price.toFixed(2)}</p>
+                <button onclick="removeMiniItem(${index})">Remove</button>
+            </div>
+        `;
+    });
+}
+
+function removeMiniItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadMiniCart();
+}
+
+loadMiniCart();
+
     </script>
+
+<div id="mini-cart">
+    <h3>Your Cart</h3>
+    <div id="mini-cart-items"></div>
+    <a href="checkout.html" class="buy" style="width:100%;margin:0;">Go to Checkout</a>
+</div>
+
+<div id="mini-cart-toggle">Cart</div>
 
 </body>
 </html>
