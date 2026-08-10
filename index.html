@@ -133,6 +133,7 @@
             <div class="Star reviews.png"></div>
             <div class="review-stars">★★★★★</div>
             <p class="review-name">Millie Parkins</p>
+            <p><i>"Very Intuitive, didn't think I'd make it thr</i></p>
         </div>
         <div class="review-slide">
             <div class="star reviews"></div>
@@ -186,6 +187,16 @@
 <-- this is for the slideshow and the review dial all java goes under this script tag -->
 </section>
     <script>
+      const saleBanner = document.getElementById("sale-banner");
+const saleBannerClose = document.getElementById("sale-banner-close");
+
+saleBannerClose.onclick = () => {
+    saleBanner.style.display = "none";
+    document.querySelector(".header").style.top = "0";
+    document.querySelector(".sidebar-container").style.top = "90px";
+    document.querySelector(".sidebar-container").style.height = "calc(100vh - 90px)";
+    document.querySelector(".content").style.paddingTop = "90px";
+};
       let currentReview = 0;
 const reviewSlides = document.querySelectorAll('.review-slide');
 const reviewDots = document.querySelectorAll('.review-dots .dot');
