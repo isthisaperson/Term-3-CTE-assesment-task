@@ -31,6 +31,22 @@
     <a class="buy" onclick="alert('Payment system not implemented yet!')">Pay Now</a>
 </div>
 
+<h2 class="section-title">Payment Details</h2>
+
+<form id="payment-form" style="max-width:400px;margin:auto;">
+  <input type="text" id="card-name" placeholder="Name on Card" required style="width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
+  
+  <input type="text" id="card-number" placeholder="Card Number" maxlength="19" required style="width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
+  
+  <div style="display:flex;gap:10px;">
+    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required style="width:50%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
+    <input type="text" id="card-cvc" placeholder="CVC" maxlength="3" required style="width:50%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
+  </div>
+
+  <a class="buy" onclick="processPayment()">Pay Now</a>
+</form>
+
+<p id="payment-status" style="text-align:center;margin-top:15px;color:#00ff88;"></p>
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let container = document.getElementById("cart-items");
