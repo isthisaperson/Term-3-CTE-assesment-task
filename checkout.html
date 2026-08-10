@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="main.css">
-    <title>FrostByte Games</title>
-    <link rel="icon" type="image/x-icon" href="Def.png">
-</head>
-
 <body>
 <header class="header">
     <a href="index.html" class="logo">
@@ -28,43 +20,43 @@
 <h3 id="total" style="text-align:center;color:#00eaff;margin-top:20px;"></h3>
 
 <div style="text-align:center;margin-top:30px;">
-    <a class="buy" onclick="alert('Payment system not implemented yet!')">Pay Now</a>
+    <a class="buy" href="checkout.html">Go to Checkout</a>
 </div>
-<h2 class="section-title">Payment Details</h2>
 
-<form id="payment-form" style="max-width:400px;margin:auto;">
-  <input type="text" id="card-name" placeholder="Name on Card" required style="width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
-  
-  <input type="text" id="card-number" placeholder="Card Number" maxlength="19" required style="width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
-  
-  <div style="display:flex;gap:10px;">
-    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required style="width:50%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
-    <input type="text" id="card-cvc" placeholder="CVC" maxlength="3" required style="width:50%;padding:10px;margin-bottom:12px;border-radius:6px;border:none;">
-  </div>
-
-  <a class="buy" onclick="processPayment()">Pay Now</a>
-</form>
-
-<p id="payment-status" style="text-align:center;margin-top:15px;color:#00ff88;"></p>
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let container = document.getElementById("cart-items");
 let total = 0;
 
-cart.forEach(item => {
-    total += item.price;
+function updateCart() {
+    container.innerHTML = "";
+    total = 0;
 
-    container.innerHTML += `
-        <div style="background:#151515;padding:20px;margin-bottom:15px;border-radius:10px;">
-            <img src="${item.img}" style="height:120px;object-fit:cover;">
-            <h3 style="color:#00eaff;margin-top:10px;">${item.name}</h3>
-            <p style="color:#ccc;">$${item.price.toFixed(2)}</p>
-        </div>
-    `;
-});
+    cart.forEach((item, index) => {
+        total += item.price;
 
-document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+        container.innerHTML += `
+            <div style="background:#151515;padding:20px;margin-bottom:15px;border-radius:10px;">
+                <img src="${item.img}" style="height:120px;object-fit:cover;">
+                <h3 style="color:#00eaff;margin-top:10px;">${item.name}</h3>
+                <p style="color:#ccc;">$${item.price.toFixed(2)}</p>
+                <button onclick="removeItem(${index})"
+                    style="margin-top:10px;padding:8px 12px;background:#ff3b3b;color:white;border:none;border-radius:6px;cursor:pointer;">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+
+    document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+updateCart();
 </script>
-
 </body>
-</html>
