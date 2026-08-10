@@ -122,6 +122,33 @@
       memorable gameplay for PC and console players worldwide.
     </p>
 
+<section class="reviews-section">
+    <h2 class="section-title">What Players Say</h2>
+
+    <div class="reviews-carousel">
+        <div class="review-slide active">
+            <div class="review-avatar"></div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-name">Player 1</p>
+        </div>
+        <div class="review-slide">
+            <div class="review-avatar"></div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-name">Player 2</p>
+        </div>
+        <div class="review-slide">
+            <div class="review-avatar"></div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-name">Player 3</p>
+        </div>
+    </div>
+
+    <div class="review-dots">
+        <span class="dot active" onclick="goToReview(0)"></span>
+        <span class="dot" onclick="goToReview(1)"></span>
+        <span class="dot" onclick="goToReview(2)"></span>
+    </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-top">
@@ -155,6 +182,24 @@
 
 </section>
     <script>
+      let currentReview = 0;
+const reviewSlides = document.querySelectorAll('.review-slide');
+const reviewDots = document.querySelectorAll('.review-dots .dot');
+
+function goToReview(index) {
+    reviewSlides[currentReview].classList.remove('active');
+    reviewDots[currentReview].classList.remove('active');
+    currentReview = index;
+    reviewSlides[currentReview].classList.add('active');
+    reviewDots[currentReview].classList.add('active');
+}
+
+function nextReview() {
+    goToReview((currentReview + 1) % reviewSlides.length);
+}
+
+setInterval(nextReview, 4000);
+
       let currentSlide = 0;
       const slides = document.querySelectorAll('.slide');
       const dots = document.querySelectorAll('.dot');
