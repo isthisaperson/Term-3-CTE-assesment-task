@@ -730,3 +730,9 @@ hr {
 .content {
     padding-top: 130px;
 }
+
+.quote {
+font-size: 10px;
+color: rgba(65, 63, 63, 0.663)
+  
+}
