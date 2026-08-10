@@ -532,6 +532,7 @@ hr {
   color: #666;
   font-size: 13px;
   padding-top: 15px;
+  text-decoration: none;
 }
 #mini-cart {
     position: fixed;
