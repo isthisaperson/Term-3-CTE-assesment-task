@@ -290,7 +290,7 @@ body {
 .card:hover {
   transform: translateY(-6px);
   border-color: var(--accent);
-  box-shadow: 0 12px 32px rgba(45, 190, 234, 0.18);
+  box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);
 }
 
 .card img {
@@ -459,7 +459,7 @@ hr {
   border: none;
   height: 2px;
   background: var(--accent);
-  box-shadow: 0 20px 40px rgba(45, 190, 234, 0.18);
+  box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);
   margin: 30px auto;
   width: 1100px;      
   max-width: 90%;     
