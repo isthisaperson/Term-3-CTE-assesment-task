@@ -689,3 +689,44 @@ hr {
 .review-dots .dot.active {
   background: var(--accent);
 }
+#sale-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--accent);
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 15px;
+    z-index: 1100;
+    animation: slideDown 0.6s ease-out;
+}
+
+#sale-banner-close {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+}
+
+#sale-banner-close:hover {
+    color: #fff;
+}
+
+.header {
+    top: 40px;
+}
+
+.sidebar-container {
+    top: 130px;
+    height: calc(100vh - 130px);
+}
+
+.content {
+    padding-top: 130px;
+}
