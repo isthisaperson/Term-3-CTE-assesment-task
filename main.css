@@ -644,6 +644,7 @@ hr {
   transform: translateX(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
+  box-shadow: #00eaff;
 }
 
 .review-slide.active {
