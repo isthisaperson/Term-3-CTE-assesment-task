@@ -630,7 +630,7 @@ hr {
   overflow: hidden;
 }
 
-.review-slide:hover {
+.review-slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -644,9 +644,8 @@ hr {
   transform: translateX(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);}
+}
+  
 
 .review-slide.active {
   opacity: 1;
