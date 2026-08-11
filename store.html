@@ -18,7 +18,7 @@ function updateCartBadge() {
 }
 
 function addToCart(name, price, img) {
-    // omar this is proof this is not ai i also not payment html and checkout.html are not ai generated
+    // this pushes the item to the cart through local chace
     cart.push({ name: name, price: price, img: img });
     
     // this will save the cart to localStorage so it persists across page reloads
@@ -109,6 +109,15 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
     </div>
 
 </main>
+ <div class="footer-col">
+      <h4>We Accept</h4>
+      <div class="payment-badges">
+        <a href="payment methods.png" class="payment-types">
+          <img src="payment methods.png" alt="Payment Methods" style="max-width: 100%; height: auto;">
+        </a>
+      </div>
+    </div>
+  </div>
 
 <hr>
 
@@ -129,7 +138,9 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
     <div class="footer-col">
       <h4>We Accept</h4>
       <div class="payment-badges">
-<a href="payment methods.png" class="payment-types">
+        <a href="payment methods.png" class="payment-types">
+          <img src="payment methods.png" alt="Payment Methods" style="max-width: 100%; height: auto;">
+        </a>
       </div>
     </div>
   </div>
