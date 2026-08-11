@@ -644,8 +644,9 @@ hr {
   transform: translateX(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
-  box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);
-}
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);}
 
 .review-slide.active {
   opacity: 1;
@@ -743,5 +744,6 @@ color: rgba(202, 199, 199, 0.663)
 .payment-types {
 width: 50%;
 height: auto;
+align-items: center;
 
 }
