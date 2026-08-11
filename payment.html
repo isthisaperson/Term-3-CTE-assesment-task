@@ -145,8 +145,6 @@ form.addEventListener("submit", (e) => {
     }, 2000);
 });
 // this will handle the promo code input and apply the discount when it is  valid
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let total = cart.reduce((sum, item) => sum + item.price, 0);
 let finalTotal = total;
 
 function updateTotalDisplay() {
