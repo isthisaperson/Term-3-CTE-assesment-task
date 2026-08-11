@@ -8,59 +8,32 @@
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let container = document.getElementById("cart-items");
-let total = 0;
+
+// Updates the (0) number in the navbar link
+function updateCartBadge() {
+    const countElement = document.getElementById("cart-count");
+    if (countElement) {
+        countElement.innerText = cart.length;
+    }
+}
 
 function addToCart(name, price, img) {
+    // omar this is proof this is not ai i also not payment html and checkout.html are not ai generated
     cart.push({ name: name, price: price, img: img });
+    
+    // this will save the cart to localStorage so it persists across page reloads
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
+    
+    // this will update the cart count in the navbar
+    updateCartBadge();
+    
+    // this will show a popup alert to the user confirming the item was added
+    alert(`"${name}" has been added to your cart!`);
 }
 
-function updateCart() {
-    container.innerHTML = "";
-    total = 0;
-
-    cart.forEach((item, index) => {
-        total += item.price;
-
-        container.innerHTML += `
-            <div style="background:#151515;padding:20px;margin-bottom:15px;border-radius:10px;">
-                <img src="${item.img}" style="height:120px;object-fit:cover;">
-                <h3 style="color:#00eaff;margin-top:10px;">${item.name}</h3>
-                <p style="color:#ccc;">$${item.price.toFixed(2)}</p>
-                <button onclick="removeItem(${index})"
-                    style="margin-top:10px;padding:8px 12px;background:#ff3b3b;color:white;border:none;border-radius:6px;cursor:pointer;">
-                    Remove
-                </button>
-            </div>
-        `;
-    });
-
-    document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
-}
-
-function removeItem(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
-}
-
-function payNow() {
-    if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
-
-    alert("Payment successful! Thank you for buying FrostByte games.");
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
-}
-
-updateCart();
+// this will run when the page loads to ensure the cart count is correct
+document.addEventListener("DOMContentLoaded", updateCartBadge);
 </script>
-
 
 
 <body>
@@ -73,11 +46,11 @@ updateCart();
         <div class="logo-img"></div>
         <h1>FrostByte Games</h1>
     </a>
-    <nav class="top-nav">
-        <a href="store.html">Store</a>
-        <a href="support.html">Support</a>
-        <a href="checkout.html">Checkout</a>
-    </nav>
+<nav class="top-nav">
+    <a href="store.html">Store</a>
+    <a href="support.html">Support</a>
+    <a href="checkout.html">Checkout (<span id="cart-count">0</span>)</a>
+</nav>
 </header>
 
 <div style="padding-top: 60px;"></div>

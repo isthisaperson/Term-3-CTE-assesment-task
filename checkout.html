@@ -13,11 +13,11 @@
         <div class="logo-img"></div>
         <h1>FrostByte Games</h1>
     </a>
-    <nav class="top-nav">
-        <a href="store.html">Store</a>
-        <a href="support.html">Support</a>
-        <a href="checkout.html">Checkout</a>
-    </nav>
+<nav class="top-nav">
+    <a href="store.html">Store</a>
+    <a href="support.html">Support</a>
+    <a href="checkout.html">Checkout (<span id="cart-count">0</span>)</a>
+</nav>
 </header>
 
 
@@ -69,6 +69,8 @@ let container = document.getElementById("cart-items");
 let total = 0;
 
 function updateCart() {
+    if (!container) return; // this doesnt work YET for some reason, but it should prevent errors if the container is not found
+    
     container.innerHTML = "";
     total = 0;
 
@@ -88,7 +90,10 @@ function updateCart() {
         `;
     });
 
-    document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+    const totalElement = document.getElementById("total");
+    if (totalElement) {
+        totalElement.innerText = "Total: $" + total.toFixed(2);
+    }
 }
 
 function removeItem(index) {
@@ -99,6 +104,3 @@ function removeItem(index) {
 
 updateCart();
 </script>
-
-</body>
-</html>
