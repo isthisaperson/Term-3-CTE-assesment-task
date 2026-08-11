@@ -630,7 +630,7 @@ hr {
   overflow: hidden;
 }
 
-.review-slide {
+.review-slide:hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -741,7 +741,7 @@ color: rgba(202, 199, 199, 0.663)
 }
 
 .payment-types {
-width: 30%;
+width: 50%;
 height: auto;
 
 }
