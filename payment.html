@@ -57,8 +57,12 @@
           <label style="color:#ccc;font-size:14px;">Shipping Address</label>
           <input id="ship-address" type="text" required placeholder="123 Placeholder Street, Sydney NSW"
               style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-
-          <button type="submit" class="buy" style="width:100%;border:none;cursor:pointer;font-size:16px;">
+ <!-- this is for promo code-->
+         <label style="color:#ccc;font-size:14px;">Promo Code</label>
+         <input id="promo-code" type="text" placeholder="Enter code"
+            style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;text-transform:uppercase;">
+         <p id="promo-message" style="font-size:13px;margin:-14px 0 16px;"></p>
+              <button type="submit" class="buy" style="width:100%;border:none;cursor:pointer;font-size:16px;">
             Pay Now
           </button>
         </form>
@@ -139,6 +143,30 @@ form.addEventListener("submit", (e) => {
 
         localStorage.removeItem("cart");
     }, 2000);
+});
+// this will handle the promo code input and apply the discount when it is  valid
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = cart.reduce((sum, item) => sum + item.price, 0);
+let finalTotal = total;
+
+function updateTotalDisplay() {
+    document.getElementById("order-total").innerText = "Total: $" + finalTotal.toFixed(2);
+}
+updateTotalDisplay();
+
+document.getElementById("promo-code").addEventListener("input", (e) => {
+    const code = e.target.value.trim().toUpperCase();
+    const msg = document.getElementById("promo-message");
+
+    if (code === "ASSESSMENT100") {
+        finalTotal = 0;
+        msg.style.color = "var(--accent)";
+        msg.innerText = "Promo applied — order is free!";
+    } else {
+        finalTotal = total;
+        msg.innerText = "";
+    }
+    updateTotalDisplay();
 });
 </script>
 
