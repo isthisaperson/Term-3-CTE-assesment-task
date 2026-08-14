@@ -466,7 +466,7 @@ hr {
 }
 
 .site-footer {
-  background: #0f0f0f;
+  background: #000;
   border-top: 2px solid var(--accent-line);
   padding: 40px 60px 20px;
   margin-top: 40px;
