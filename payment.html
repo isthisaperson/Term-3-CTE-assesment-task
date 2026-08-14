@@ -55,17 +55,19 @@
           <label style="color:#ccc;font-size:14px;">Shipping Address</label>
           <input id="ship-address" type="text" required placeholder="123 Placeholder Street, Sydney NSW"
               style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
- <label style="color:#ccc;font-size:14px;">Promo Code</label>
-         <input id="promo-code" type="text" placeholder="Enter code"
-            style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;text-transform:uppercase;">
-         <p id="promo-message" style="font-size:13px;margin:-14px 0 16px;"></p>
-              <button type="submit" class="buy" style="width:100%;border:none;cursor:pointer;font-size:16px;">
+
+          <label style="color:#ccc;font-size:14px;">Promo Code</label>
+          <input id="promo-code" type="text" placeholder="Enter code"
+              style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;text-transform:uppercase;">
+          <p id="promo-message" style="font-size:13px;margin:-14px 0 16px;"></p>
+
+          <button type="submit" class="buy" style="width:100%;border:none;cursor:pointer;font-size:16px;">
             Pay Now
           </button>
         </form>
 
         <p style="color:#666;font-size:12px;text-align:center;margin-top:16px;">
-          🔒 256-bit encrypted connection 
+          🔒 256-bit encrypted connection
         </p>
       </div>
 
@@ -92,7 +94,22 @@
     </div>
 
   </div>
- <div class="footer-col">
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>FrostByte Games</h3>
+      <p>Learn it. Build it. Game it.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="support.html">Support</a>
+    </div>
+
+    <div class="footer-col">
       <h4>We Accept</h4>
       <div class="payment-badges">
         <a href="payment methods.png" class="payment-types">
@@ -102,6 +119,9 @@
     </div>
   </div>
 
+  <p class="footer-bottom"><i>&copy; 2026 FrostByte Games. All rights reserved.</i></p>
+</footer>
+
 <style>
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -110,9 +130,13 @@
 </style>
 
 <script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let total = cart.reduce((sum, item) => sum + item.price, 0);
-document.getElementById("order-total").innerText = "Total: $" + total.toFixed(2);
+const ORDER_PRICE = 30.00; // this is the original order price for the forst byete game bunfle
+let finalTotal = ORDER_PRICE;
+
+function updateTotalDisplay() {
+    document.getElementById("order-total").innerText = "Total: $" + finalTotal.toFixed(2);
+}
+updateTotalDisplay();
 
 const form = document.getElementById("payment-form");
 
@@ -127,6 +151,22 @@ document.getElementById("card-expiry").addEventListener("input", (e) => {
     let v = e.target.value.replace(/\D/g, "").slice(0, 4);
     if (v.length > 2) v = v.slice(0, 2) + "/" + v.slice(2);
     e.target.value = v;
+});
+
+// promo code check
+document.getElementById("promo-code").addEventListener("input", (e) => {
+    const code = e.target.value.trim().toUpperCase();
+    const msg = document.getElementById("promo-message");
+
+    if (code === "ASSESSMENT100") {
+        finalTotal = 0;
+        msg.style.color = "var(--accent)";
+        msg.innerText = "Promo applied — order is free!";
+    } else {
+        finalTotal = ORDER_PRICE;
+        msg.innerText = "";
+    }
+    updateTotalDisplay();
 });
 
 form.addEventListener("submit", (e) => {
@@ -145,32 +185,7 @@ form.addEventListener("submit", (e) => {
         const orderNum = "FB-" + Math.floor(100000 + Math.random() * 900000);
         document.getElementById("order-number").innerText = orderNum;
         document.getElementById("ship-to-display").innerText = name + "\n" + address;
-
-        localStorage.removeItem("cart");
     }, 2000);
-});
-
-// this will handle the promo code input and apply the discount when it is  valid
-let finalTotal = total;
-
-function updateTotalDisplay() {
-    document.getElementById("order-total").innerText = "Total: $" + finalTotal.toFixed(2);
-}
-updateTotalDisplay();
-
-document.getElementById("promo-code").addEventListener("input", (e) => {
-    const code = e.target.value.trim().toUpperCase();
-    const msg = document.getElementById("promo-message");
-
-    if (code === "ASSESSMENT100") {
-        finalTotal = 0;
-        msg.style.color = "var(--accent)";
-        msg.innerText = "Promo applied — order is free!";
-    } else {
-        finalTotal = total;
-        msg.innerText = "";
-    }
-    updateTotalDisplay();
 });
 </script>
 
