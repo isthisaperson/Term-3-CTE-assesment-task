@@ -363,6 +363,7 @@ footer {
   padding: 25px;
   color: #888;
   font-size: 14px;
+  background-color: #000;
 }
   
 .support-box,
@@ -762,5 +763,10 @@ color: rgba(202, 199, 199, 0.663)
 .payment-types {
 width: 40%;
 height: auto;
+<<<<<<< HEAD
+align-items: center;
+user-select: none;
+=======
+>>>>>>> 8991a8f0d62ed0881940951cadec8d052b4d7dea
 
 }

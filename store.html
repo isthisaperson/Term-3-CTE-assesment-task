@@ -6,36 +6,6 @@
     <link rel="icon" type="image/x-icon" href="Def.png">
 </head>
 
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Updates the (0) number in the navbar link
-function updateCartBadge() {
-    const countElement = document.getElementById("cart-count");
-    if (countElement) {
-        countElement.innerText = cart.length;
-    }
-}
-
-function addToCart(name, price, img) {
-    // this pushes the item to the cart through local chace
-    cart.push({ name: name, price: price, img: img });
-    
-    // this will save the cart to localStorage so it persists across page reloads
-    localStorage.setItem("cart", JSON.stringify(cart));
-    
-    // this will update the cart count in the navbar
-    updateCartBadge();
-    
-    // this will show a popup alert to the user confirming the item was added
-    alert(`"${name}" has been added to your cart!`);
-}
-
-// this will run when the page loads to ensure the cart count is correct
-document.addEventListener("DOMContentLoaded", updateCartBadge);
-</script>
-
-
 <body>
 <div id="sale-banner">
     🎉 SALE ON NOW — USE CODE <strong>ASSESSMENT100</strong> AT CHECKOUT
@@ -49,12 +19,11 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
 <nav class="top-nav">
     <a href="store.html">Store</a>
     <a href="support.html">Support</a>
-    <a href="checkout.html">Checkout (<span id="cart-count">0</span>)</a>
+    <a href="checkout.html">Checkout</a>
 </nav>
 </header>
 
 <div style="padding-top: 60px;"></div>
-
 
 <div class="sidebar-container">
     <aside class="sidebar">
@@ -73,9 +42,8 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
             <img src="Fortniteskinadsdying.png">
             <h3>PC Builder: Secure Your Rig</h3>
             <p>Build a PC while learning hardware and system security.</p>
-
             <a class="buy-disabled">Out of Stock</a>
-        </div> 
+        </div>
 
         <div class="card">
             <img src="FireyFrostBytesWindogeForAvinashIndrajith.png">
@@ -88,21 +56,20 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
             <img src="game3.png">
             <h3>Cyber Dungeon</h3>
             <p>Answer cybersecurity questions to defeat dungeon bosses.</p>
-            <a class="buy-disabled">Out of stock</a>
+            <a class="buy-disabled">Out of Stock</a>
         </div>
 
         <div class="card">
-    <img src="bundle.png">
-    <h3>FrostByte Triple Bundle</h3>
-    <p>All 3 games together in one discounted bundle.</p>
+            <img src="bundle.png">
+            <h3>FrostByte Triple Bundle</h3>
+            <p>All 3 games together in one discounted bundle.</p>
+            <span class="price">$30.00</span>
+            <a class="buy" href="payment.html">Buy Now</a>
+        </div>
 
-    <span class="price">$30.00</span>
+    </div>
 
-    <a class="buy" onclick="addToCart('FrostByte Triple Bundle', 30.00, 'bundle.png')">
-        Add to Cart
-    </a>
-</div>
-
+</main>
 
 <footer class="site-footer">
   <div class="footer-top">
@@ -127,7 +94,6 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
       </div>
     </div>
   </div>
-
 
   <p class="footer-bottom"><i>&copy; 2026 FrostByte Games. All rights reserved.</i></p>
 </footer>
