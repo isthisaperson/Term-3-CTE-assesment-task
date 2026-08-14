@@ -12,6 +12,7 @@
 :root {
     --accent:#2dbeea; 
     --accent-line:#2dbeea; 
+    --redaccent:#FF3B3B;
 }
 
 .About-NorthByte {
@@ -153,6 +154,7 @@ body {
 
 .content {
   padding-top: 90px;
+
 }
 
 .page-content {
@@ -335,8 +337,25 @@ body {
   text-decoration: none;
 }
 
+.buy-disabled {
+  display: block;
+  margin: 0 18px 18px;
+  padding: 11px 0;
+  text-align: center;
+  width: calc(100% - 36px);
+  background: #9c9c9c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
 .buy:hover {
   background: #ffffff;
+}
+
+.buy-disabled:hover {
+  background: var(--redaccent);
 }
 
 footer {
@@ -418,7 +437,7 @@ details p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 35px;
-    padding: 20px;
+    padding: 40px;
     justify-content: center;
 }
 
@@ -743,6 +762,5 @@ color: rgba(202, 199, 199, 0.663)
 .payment-types {
 width: 40%;
 height: auto;
-align-items: center;
 
 }
