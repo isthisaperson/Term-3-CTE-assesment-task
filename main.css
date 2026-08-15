@@ -714,12 +714,13 @@ color: rgba(202, 199, 199, 0.663)
 .footer-col h4 {
   color: var(--accent);
   margin-bottom: 12px;
+  font-size: 18px;
 }
 
 .footer-col p,
 .footer-col a {
   color: #999;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .footer-col a {
@@ -746,7 +747,7 @@ color: rgba(202, 199, 199, 0.663)
 
 
 .payment-types {
-  width: 300px;
+  width: 350px;
 }
 
 .footer-divider {
@@ -763,6 +764,6 @@ color: rgba(202, 199, 199, 0.663)
   max-width: 1000px;
   margin: auto;
   color: #555;
-  font-size: 14x;
+  font-size: 16x;
 }
 
