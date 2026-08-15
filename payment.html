@@ -19,86 +19,81 @@
     </nav>
   </header>
 
-  <div class="content" style="padding-top:110px;">
+<div class="payment-box">
 
-    <div id="terminal-wrap" style="max-width:420px;margin:20px auto;background:#151515;border:1px solid #2a2a2a;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.45);overflow:hidden;">
-
-      <div style="background:var(--accent);color:#000;padding:16px 24px;font-weight:bold;font-size:18px;">
-        Secure Payment Terminal
-      </div>
-
-      <div id="step-form" style="padding:30px;">
-        <p id="order-total" style="color:var(--accent);font-size:20px;font-weight:bold;margin-bottom:20px;"></p>
-
-        <form id="payment-form">
-          <label style="color:#ccc;font-size:14px;">Name on Card</label>
-          <input id="card-name" type="text" required placeholder="Jane Doe"
-              style="width:100%;padding:10px;margin:6px 0 16px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-
-          <label style="color:#ccc;font-size:14px;">Card Number</label>
-          <input id="card-number" type="text" required maxlength="19" placeholder="1234 5678 9012 3456"
-              style="width:100%;padding:10px;margin:6px 0 16px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-
-          <div style="display:flex;gap:12px;">
-            <div style="flex:1;">
-              <label style="color:#ccc;font-size:14px;">Expiry</label>
-              <input id="card-expiry" type="text" required maxlength="5" placeholder="MM/YY"
-                  style="width:100%;padding:10px;margin:6px 0 16px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-            </div>
-            <div style="flex:1;">
-              <label style="color:#ccc;font-size:14px;">CVC</label>
-              <input id="card-cvc" type="text" required maxlength="3" placeholder="123"
-                  style="width:100%;padding:10px;margin:6px 0 16px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-            </div>
-          </div>
-
-          <label style="color:#ccc;font-size:14px;">Shipping Address</label>
-          <input id="ship-address" type="text" required placeholder="123 Placeholder Street, Sydney NSW"
-              style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;">
-
-          <label style="color:#ccc;font-size:14px;">Promo Code</label>
-          <input id="promo-code" type="text" placeholder="Enter code"
-              style="width:100%;padding:10px;margin:6px 0 20px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:white;text-transform:uppercase;">
-          <p id="promo-message" style="font-size:13px;margin:-14px 0 16px;"></p>
-
-          <button type="submit" class="buy" style="width:100%;border:none;cursor:pointer;font-size:16px;">
-            Pay Now
-          </button>
-        </form>
-
-        <p style="color:#666;font-size:12px;text-align:center;margin-top:16px;">
-          🔒 256-bit encrypted connection
-        </p>
-      </div>
-
-      <div id="step-processing" style="display:none;padding:60px 30px;text-align:center;">
-        <div style="width:50px;height:50px;border:4px solid #333;border-top:4px solid var(--accent);border-radius:50%;margin:0 auto 20px;animation:spin 0.8s linear infinite;"></div>
-        <p style="color:#ccc;font-size:16px;">Processing your payment...</p>
-      </div>
-
-      <div id="step-success" style="display:none;padding:40px 30px;text-align:center;">
-        <div style="width:60px;height:60px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;color:#000;">✓</div>
-        <h2 style="color:var(--accent);margin-bottom:10px;">Payment Successful</h2>
-        <p style="color:#ccc;margin-bottom:20px;">Your order has been confirmed.</p>
-
-        <div style="background:#0a0a0a;border:1px solid #2a2a2a;border-radius:10px;padding:18px;text-align:left;margin-bottom:20px;">
-          <p style="color:#999;font-size:13px;">ORDER NUMBER</p>
-          <p id="order-number" style="color:white;font-weight:bold;margin-bottom:12px;"></p>
-          <p style="color:#999;font-size:13px;">SHIPPED TO</p>
-          <p id="ship-to-display" style="color:white;"></p>
-        </div>
-
-        <a href="index.html" class="buy" style="display:inline-block;width:100%;">Back to Home</a>
-      </div>
-
-    </div>
-
+  <div class="payment-header">
+    Secure Payment Terminal
   </div>
 
+  <div class="payment-form">
+    <p id="order-total"></p>
+
+    <form id="payment-form">
+
+      <label>Name on Card</label>
+      <input id="card-name" type="text" required placeholder="Jane Doe">
+
+      <label>Card Number</label>
+      <input id="card-number" type="text" required maxlength="19"
+        placeholder="1234 5678 9012 3456">
+
+      <div class="card-details">
+        <div>
+          <label>Expiry</label>
+          <input id="card-expiry" type="text" required maxlength="5" placeholder="MM/YY">
+        </div>
+
+        <div>
+          <label>CVC</label>
+          <input id="card-cvc" type="text" required maxlength="3" placeholder="123">
+        </div>
+      </div>
+
+      <label>Shipping Address</label>
+      <input id="ship-address" type="text" required>
+
+      <label>Promo Code</label>
+      <input id="promo-code" type="text" placeholder="Enter code">
+
+      <p id="promo-message"></p>
+
+      <button type="submit" class="buy payment-button">Pay Now</button>
+    </form>
+
+    <p class="secure-message">🔒 256-bit encrypted connection</p>
+  </div>
+
+  <div id="step-processing">
+    <div class="loading-spinner"></div>
+    <p>Processing your payment...</p>
+  </div>
+
+  <div id="step-success">
+    <div class="success-icon">✓</div>
+
+    <h2>Payment Successful</h2>
+    <p>Your order has been confirmed.</p>
+
+    <div class="order-info">
+      <p>ORDER NUMBER</p>
+      <p id="order-number"></p>
+      <p>SHIPPED TO</p>
+      <p id="ship-to-display"></p>
+    </div>
+
+    <a href="index.html" class="buy payment-button">Back to Home</a>
+  </div>
+
+</div>
 <footer class="site-footer">
+
   <div class="footer-top">
+
     <div class="footer-col">
-      <h3>FrostByte Games</h3>
+      <div class="footer-logo">
+        <img src="Def.png" alt="FrostByte Games logo">
+        <h3>FrostByte Games</h3>
+      </div>
       <p>Learn it. Build it. Game it.</p>
     </div>
 
@@ -110,16 +105,22 @@
     </div>
 
     <div class="footer-col">
-      <h4>We Accept</h4>
-      <div class="payment-badges">
-        <a href="payment methods.png" class="payment-types">
-          <img src="payment methods.png" alt="Payment Methods" style="max-width: 100%; height: auto;">
-        </a>
-      </div>
+      <h4>Games</h4>
+      <a href="ben.html">PC Builder</a>
+      <a href="avina.html">Adam's Computer</a>
+      <a href="omar.html">Cyber Dungeon</a>
     </div>
+
   </div>
 
-  <p class="footer-bottom"><i>&copy; 2026 FrostByte Games. All rights reserved.</i></p>
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <span>© 2026 FrostByte Games</span>
+    <img src="payment methods.png" class="payment-types" alt="Payment Methods">
+    <span>All rights reserved.</span>
+  </div>
+
 </footer>
 
 <style>
