@@ -131,15 +131,19 @@
 </style>
 
 <script>
-const ORDER_PRICE = 30.00; // this is the original order price for the forst byete game bunfle
+const ORDER_PRICE = 30.00; // this is the original order price for the frostbyte game bundle
 let finalTotal = ORDER_PRICE;
 
+const orderTotalEl = document.getElementById("order-total");
+const stepForm = document.getElementById("step-form");
+const stepProcessing = document.getElementById("step-processing");
+const stepSuccess = document.getElementById("step-success");
+const form = document.getElementById("payment-form");
+
 function updateTotalDisplay() {
-    document.getElementById("order-total").innerText = "Total: $" + finalTotal.toFixed(2);
+    orderTotalEl.innerText = "Total: $" + finalTotal.toFixed(2);
 }
 updateTotalDisplay();
-
-const form = document.getElementById("payment-form");
 
 // this will format the card number as 1234 5678 9012 3456
 document.getElementById("card-number").addEventListener("input", (e) => {
@@ -162,7 +166,7 @@ document.getElementById("promo-code").addEventListener("input", (e) => {
     if (code === "ASSESSMENT100") {
         finalTotal = 0;
         msg.style.color = "var(--accent)";
-        msg.innerText = "Promo applied — order is free!";
+        msg.innerText = "Promo applied — this order is free!";
     } else {
         finalTotal = ORDER_PRICE;
         msg.innerText = "";
@@ -176,12 +180,12 @@ form.addEventListener("submit", (e) => {
     const name = document.getElementById("card-name").value;
     const address = document.getElementById("ship-address").value;
 
-    document.getElementById("step-form").style.display = "none";
-    document.getElementById("step-processing").style.display = "block";
+    stepForm.style.display = "none";
+    stepProcessing.style.display = "block";
 
     setTimeout(() => {
-        document.getElementById("step-processing").style.display = "none";
-        document.getElementById("step-success").style.display = "block";
+        stepProcessing.style.display = "none";
+        stepSuccess.style.display = "block";
 
         const orderNum = "FB-" + Math.floor(100000 + Math.random() * 900000);
         document.getElementById("order-number").innerText = orderNum;
