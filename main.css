@@ -866,3 +866,7 @@ color: rgba(202, 199, 199, 0.663)
     transform: rotate(360deg);
   }
 }
+#step-processing,
+#step-success {
+    display: none;
+}
