@@ -22,6 +22,21 @@
   
 </nav>
   </header>
+  <header>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const allowedPages = ["index.html", "store.html"];
+    const currentPage = window.location.pathname.split("/").pop();
+
+    const banner = document.getElementById("sale-banner");
+
+    if (banner && !allowedPages.includes(currentPage)) {
+        banner.style.display = "none";
+    }
+});
+</script>
+
+  </header>
 
   <div style="padding: 10px;"></div>
 
@@ -163,7 +178,7 @@
         <span class="dot active" onclick="goToReview(0)"></span>
         <span class="dot" onclick="goToReview(1)"></span>
         <span class="dot" onclick="goToReview(2)"></span>
-        <span class="dot" onclick="goToReview(3)"></span>
+        <span class="dot" onclick="goToReview(3)">  </span>
     </div>
 </section>
 

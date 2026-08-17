@@ -20,6 +20,21 @@
     </nav>
 </header>
 
+  <header>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const allowedPages = ["index.html", "store.html"];
+    const currentPage = window.location.pathname.split("/").pop();
+
+    const banner = document.getElementById("sale-banner");
+
+    if (banner && !allowedPages.includes(currentPage)) {
+        banner.style.display = "none";
+    }
+});
+</script>
+
+  </header>
 
   <div class="sidebar-container">
     <aside class="sidebar">
