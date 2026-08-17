@@ -870,3 +870,37 @@ color: rgba(202, 199, 199, 0.663)
 #step-success {
     display: none;
 }
+
+.values {
+    display: flex; /* makes the elements next to each other, otherwise each element will appear under one another */
+    max-width: 1000px; /* stops columns from streching across whole screen */
+    margin: 0 auto;/* centers whole thing */
+}
+
+.value {
+    flex: 1; /*each section gets equal amount of avail space*/
+}
+
+.value + .value { /*the plus basically means it will only select those that are adjacent to each other or come immediately after another .value */
+    border-left: 1px solid #333;
+}
+
+.value h3 {
+    color: var(--accent);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.value p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.slogan {
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
