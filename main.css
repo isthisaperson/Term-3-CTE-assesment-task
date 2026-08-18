@@ -706,30 +706,30 @@ color: rgba(202, 199, 199, 0.663)
   gap: 50px;
 }
 
-.footer-col {
+.footer-column {
   min-width: 150px;
 }
 
-.footer-col h3,
-.footer-col h4 {
+.footer-column h3,
+.footer-column h4 {
   color: var(--accent);
   margin-bottom: 12px;
   font-size: 18px;
 }
 
-.footer-col p,
-.footer-col a {
+.footer-column p,
+.footer-column a {
   color: #999;
   font-size: 16px;
 }
 
-.footer-col a {
+.footer-column a {
   display: block;
   text-decoration: none;
   margin-bottom: 8px;
 }
 
-.footer-col a:hover {
+.footer-columnqwd a:hover {
   color: var(--accent);
 }
 
