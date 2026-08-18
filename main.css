@@ -151,6 +151,19 @@ body {
   font-size: 20px;
   margin-bottom: 25px;
 }
+.sidebar {
+  position: absolute;
+  left: 0;
+  width: 230px;
+  height: 100%;
+  background: #111;
+  padding: 25px;
+  border-right: 2px solid var(--accent);
+
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
 
 .content {
   padding-top: 90px;
