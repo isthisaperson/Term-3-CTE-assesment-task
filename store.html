@@ -122,6 +122,16 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 
 </footer>
+<script> 
+const saleBanner = document.getElementById("sale-banner");
+const saleBannerClose = document.getElementById("sale-banner-close");
+
+if (saleBanner && saleBannerClose) {
+    saleBannerClose.onclick = () => {
+        saleBanner.style.display = "none";
+    };
+}
+</script>
 
 </body>
 </html>
