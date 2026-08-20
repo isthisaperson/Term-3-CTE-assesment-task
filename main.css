@@ -838,6 +838,32 @@ color: rgba(202, 199, 199, 0.663)
 }
 
 .bensbanner {
-    margin-top: 150px;
-    height: 400px;
+    margin-top: 130px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.compute-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.compute-name {
+    position: absolute;
+    width: 500px;
+    max-width: 70%;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.compute-slogan {
+    position: absolute;
+    width: 350px;
+    max-width: 60%;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
