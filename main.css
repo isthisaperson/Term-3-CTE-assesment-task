@@ -852,18 +852,18 @@ color: rgba(202, 199, 199, 0.663)
 
 .compute-name {
     position: absolute;
-    width: 400px;
+    width: 500px;
     height: auto;
-    top: 35%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .compute-slogan {
     position: absolute;
-    width: 300px;
+    width: 450px;
     height: auto;
-    top: 55%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
