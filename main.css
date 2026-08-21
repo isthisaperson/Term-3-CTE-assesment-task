@@ -867,3 +867,18 @@ color: rgba(202, 199, 199, 0.663)
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/*i learnt how to do these hover drop shadows through this  
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow 
+issue was that box shadow would just put a rectangle around the perimeter of the png incl the transparent parts - not what i want */
+.computelogo:hover {
+    filter: drop-shadow(0 0 10px var(--accent))
+            drop-shadow(0 0 25px var(--accent));
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.computeslogan:hover {
+    filter: drop-shadow(0 0 8px var(--accent))
+            drop-shadow(0 0 20px var(--accent));
+    transform: translate(-50%, -50%) scale(1.05);
+}
