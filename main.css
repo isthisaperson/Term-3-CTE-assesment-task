@@ -437,6 +437,13 @@ footer {
     margin-bottom: 20px;
 }
 
+.faq-box-ben {
+    background: #151515;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 35px;
+}
+
 .support-box p {
     color: #ccc;
     font-size: 17px;
