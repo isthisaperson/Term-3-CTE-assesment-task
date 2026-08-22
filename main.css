@@ -962,7 +962,7 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 
 .computeimg1 img {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     display: block;
     margin: auto;
     border-radius: 14px;
