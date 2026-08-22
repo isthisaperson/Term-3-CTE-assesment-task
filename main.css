@@ -1022,6 +1022,7 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     color: var(--accent);
     font-size: 40px;
     margin-bottom: 15px;
+    font-family: "Inter", sans-serif;
 }
 
 .calltoaction p {
@@ -1039,8 +1040,11 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     font-size: 17px;
     font-weight: bold;
     border-radius: 8px;
+    transition: all 0.25s ease;
+    font-family: "Inter", sans-serif;
 }
 
 .calltoactionbutton:hover {
     background: white;
+    transition: all 0.25s ease;
 }
