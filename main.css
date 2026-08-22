@@ -231,12 +231,6 @@ body {
   justify-content: center;
 }
 
-.hero-info-ben h3 {
-  font-size: 24px;
-  color: var(--accent);
-  font-family: "Inter", sans-serif;
-}
-
 .hero-info-ben p {
   margin-top: 12px;
   color: white;
@@ -250,23 +244,42 @@ body {
     align-self: flex-start;
     align-items: center;
     text-align: center;
-
     padding: 12px 24px;
-
     background: var(--accent);
     color: white;
-
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-
     border: 2px solid var(--accent);
     border-radius: 8px;
-
     transition: all 0.25s ease;
-}side
+}
+
+.hero-buy-ben {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    font-family: "Inter", sans-serif;
+}
 
 .hero-buy:hover {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.hero-buy-ben:hover {
     background: white;
     color: black;
     border-color: white;
