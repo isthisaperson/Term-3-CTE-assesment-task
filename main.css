@@ -442,6 +442,13 @@ footer {
     padding: 30px;
     border-radius: 12px;
     margin: 35px;
+    font-family: "Inter", sans-serif;
+
+}
+
+.faq-box-ben p {
+    font-family: 'Acme', sans-serif;
+
 }
 
 .support-box p {
