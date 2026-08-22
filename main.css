@@ -885,3 +885,54 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 .computeslogan:hover {
     filter: drop-shadow(0 0 10px white);
 }
+
+.whatscompute {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px 40px;
+}
+
+.whatscompute h2 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.computeintro {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.computeintrotext {
+    flex: 1; /*tells item to take up its full size in its container */
+
+}
+
+.computeintrotext h3 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.computeintrotext p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.computeimg1 {
+    flex: 1;
+}
+
+.computeimg1 img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    border-radius: 14px;
+}
