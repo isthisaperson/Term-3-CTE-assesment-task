@@ -273,6 +273,11 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+.hero-buy-ben p {
+
+    text-align: right;
+}
+
 .hero-buy:hover {
     background: white;
     color: black;
