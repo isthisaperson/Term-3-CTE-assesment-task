@@ -1109,3 +1109,37 @@ issue was that box shadow would just put a rectangle around the perimeter of the
         transform: translateX(-2546px);
     }
 }
+.learn-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 25px;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.learn-text {
+  text-align: left;
+}
+
+.learn-text h2 {
+  margin-top: 0;
+  color: #00bfff; 
+}
+
+.learn-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.learn-sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid #333;
+}
