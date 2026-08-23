@@ -1111,13 +1111,13 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 }
 .learn-images {
   display: flex;
-  flex-direction: row; /* places them side-by-side */
+  flex-direction: row;
   gap: 15px;
   margin-top: 20px;
 }
 
 .learn-images img {
-  width: 50%; /* splits the space equally between both images */
+  width: 50%; 
   height: auto;
   border-radius: 8px;
   border: 1px solid #333;
