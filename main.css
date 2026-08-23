@@ -1057,102 +1057,68 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     transition: all 0.25s ease;
 }
 
-.scrollingleft {
+.components-section {
     text-align: center;
     padding: 70px 0;
     overflow: hidden;
 }
 
-.left-carousel {
-    width: 100%;
-    overflow: hidden;
+.components-section h2 {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 40px;
 }
 
-.left-track {
-    display: flex;
-    width: max-content;
-    animation: move-left 30s linear infinite;
-}
-
-.left-track img {
-    height: 250px;
-    width: auto;
-    display: block;
-}
-
-@keyframes move-left {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-2120px);
-    }
-}
-
-.scrollingright {
+.scrollingelements {
     text-align: center;
     padding: 70px 0;
     overflow: hidden;
 }
 
-.right-carousel {
+.scrollingelements h2 {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: "Inter", sans-serif;
+}
+
+.components-carousel {
     width: 100%;
     overflow: hidden;
 }
 
-.right-track {
+.components-track {
     display: flex;
     width: max-content;
-    animation: move-right 30s linear infinite;
+    animation: move-components 30s linear infinite;
 }
 
-.right-track img {
-    height: 250px;
+.components-track img {
+    height: 300px;
     width: auto;
     display: block;
+    flex-shrink: 0;
 }
 
-@keyframes move-right {
+@keyframes move-components {
     from {
-        transform: translateX(-2120px);
+        transform: translateX(0);
     }
 
     to {
-        transform: translateX(0);
+        transform: translateX(-2546px);
     }
 }
-.learn-container {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 25px;
-  align-items: center;
-  background-color: #1a1a1a;
-  padding: 30px;
-  border-radius: 12px;
-  margin: 40px auto;
-  max-width: 1000px;
-}
-
-.learn-text {
-  text-align: left;
-}
-
-.learn-text h2 {
-  margin-top: 0;
-  color: #00bfff; 
-}
-
-.learn-sidebar {
+.learn-images {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* places them side-by-side */
   gap: 15px;
+  margin-top: 20px;
 }
 
-.learn-sidebar img {
-  width: 100%;
+.learn-images img {
+  width: 50%; /* splits the space equally between both images */
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   border: 1px solid #333;
 }
