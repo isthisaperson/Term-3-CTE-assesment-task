@@ -1110,15 +1110,15 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     }
 }
 .learn-images {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 900px;
 }
 
 .learn-images img {
-  width: 50%; 
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #333;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
 }
