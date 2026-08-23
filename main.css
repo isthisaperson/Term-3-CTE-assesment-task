@@ -920,22 +920,22 @@ color: rgba(202, 199, 199, 0.663)
 .bensbanner {
     margin-top: 130px;
     height: 500px;
-    position: relative;
+    position: relative; /* allows elements inside it to be positioned over the banner.*/
     overflow: hidden;
 }
 
 .bannerbackground {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Crops video so it completely covers the banner*/
     display: block;
 }
 
 .computelogo {
-    position: absolute;
+    position: absolute; /* Puts logo over video*/
     width: 500px;
-    height: auto;
-    top: 42%;
+    height: auto;/* Keeps aspect ratio*/
+    top: 42%;/* puts it 42% down the banner from the top.*/
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -986,7 +986,7 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 }
 
 .computeintrotext {
-    flex: 1.3; /*tells item to take up its full size in its container */
+    flex: 1.3; /*tells item to take up 130% in its container */
 
 }
 
@@ -1014,7 +1014,7 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     max-width: 400px;
     display: block; /*makes the image lay not inline */
 
-    margin: auto;
+    margin: auto;/* centers image horizontally */
     border-radius: 14px;
 }
 
@@ -1041,7 +1041,7 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 }
 
 .calltoactionbutton {
-    display: inline-block;
+    display: inline-block;/* allows link to have padding and button like dimensions */
     padding: 12px 25px;
     background: var(--accent);
     color: #000;
@@ -1071,9 +1071,9 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 }
 
 .left-track {
-    display: flex;
-    width: max-content;
-    animation: move-left 30s linear infinite;
+    display: flex; /* places images next to each other */
+    width: max-content;/* makes it only as wide as its contents*/
+    animation: move-left 30s linear infinite;/* Continuously moves over 30seconds forever*/
 }
 
 .left-track img {
@@ -1084,11 +1084,11 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 
 @keyframes move-left {
     from {
-        transform: translateX(0);
+        transform: translateX(0);/* starts carousel at normal location*/
     }
 
     to {
-        transform: translateX(-2120px);
+        transform: translateX(-2120px);/* Moves carousel 2120px to the left*/
     }
 }
 
