@@ -830,6 +830,7 @@ color: rgba(202, 199, 199, 0.663)
   width: 100%;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
 .secure-message {
