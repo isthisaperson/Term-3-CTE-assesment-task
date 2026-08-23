@@ -243,50 +243,62 @@
 
 </footer>
 <!-- this is for the slideshow and the review dial all java goes under this script tag -->
-    <script>
+ <script>
+   
 
-      let currentReview = 0;
-const reviewSlides = document.querySelectorAll('.review-slide');
-const reviewDots = document.querySelectorAll('.review-dots .dot');
+    let currentReview = 0;
 
-function goToReview(index) {
-    reviewSlides[currentReview].classList.remove('active');
-    reviewDots[currentReview].classList.remove('active');
-    currentReview = index;
-    reviewSlides[currentReview].classList.add('active');
-    reviewDots[currentReview].classList.add('active');
-}
+    const reviewSlides = document.querySelectorAll('.review-slide');
+    const reviewDots = document.querySelectorAll('.review-dots .dot');
 
-function nextReview() {
-    goToReview((currentReview + 1) % reviewSlides.length);
-}
+    function goToReview(index) {
+    
+        reviewSlides[currentReview].classList.remove('active');
+        reviewDots[currentReview].classList.remove('active');
 
-setInterval(nextReview, 5000);
 
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
+        currentReview = index;
 
-      function goToSlide(index) {
+
+        reviewSlides[currentReview].classList.add('active');
+        reviewDots[currentReview].classList.add('active');
+    }
+
+    function nextReview() {
+        goToReview((currentReview + 1) % reviewSlides.length);
+    }
+
+
+    setInterval(nextReview, 5000);
+
+
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll('.slide');
+
+
+    const dots = document.querySelectorAll('.slide-dots .dot');
+
+    function goToSlide(index) {
+       
         slides[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
 
+
         currentSlide = index;
 
+   
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
-      }
+    }
 
-      function nextSlide() {
+    function nextSlide() {
         let next = (currentSlide + 1) % slides.length;
         goToSlide(next);
-      }
+    }
 
-      setInterval(nextSlide, 6000);
-
-
-    </script>
-
+    setInterval(nextSlide, 6000);
+</script>
 </div>
 
 </body>
