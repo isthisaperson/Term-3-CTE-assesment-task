@@ -1061,6 +1061,18 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     margin-bottom: 40px;
 }
 
+.scrollingelements {
+    text-align: center;
+    padding: 70px 0;
+    overflow: hidden;
+}
+
+.scrollingelements h2 {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
 .components-carousel {
     width: 100%;
     overflow: hidden;
@@ -1069,17 +1081,17 @@ issue was that box shadow would just put a rectangle around the perimeter of the
 .components-track {
     display: flex;
     width: max-content;
-    animation: move-components 25s linear infinite;
+    animation: move-components 30s linear infinite;
 }
 
 .components-track img {
     width: 6907px;
-    max-width: none;
+    height: auto;
     display: block;
+    flex-shrink: 0;
 }
 
 @keyframes move-components {
-
     from {
         transform: translateX(0);
     }
@@ -1087,5 +1099,4 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     to {
         transform: translateX(-6907px);
     }
-
 }
