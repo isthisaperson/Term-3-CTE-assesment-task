@@ -244,16 +244,7 @@
 </footer>
 <!-- this is for the slideshow and the review dial all java goes under this script tag -->
     <script>
-      const saleBanner = document.getElementById("sale-banner");
-const saleBannerClose = document.getElementById("sale-banner-close");
 
-saleBannerClose.onclick = () => {
-    saleBanner.style.display = "none";
-    document.querySelector(".header").style.top = "0";
-    document.querySelector(".sidebar-container").style.top = "90px";
-    document.querySelector(".sidebar-container").style.height = "calc(100vh - 90px)";
-    document.querySelector(".content").style.paddingTop = "90px";
-};
       let currentReview = 0;
 const reviewSlides = document.querySelectorAll('.review-slide');
 const reviewDots = document.querySelectorAll('.review-dots .dot');
