@@ -450,7 +450,17 @@ footer {
     font-family: 'Acme', sans-serif;
 
 }
+ .learn-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+}
 
+.learn-sidebar img {
+  width: 100%;
+  border-radius: 6px;
+} 
 .support-box p {
     color: #ccc;
     font-size: 17px;
@@ -769,8 +779,6 @@ color: rgba(202, 199, 199, 0.663)
   color: #555;
   font-size: 16x;
 }
-
-/* Payment */
 
 .payment-box {
   width: 420px;
