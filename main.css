@@ -1109,16 +1109,17 @@ issue was that box shadow would just put a rectangle around the perimeter of the
         transform: translateX(-2546px);
     }
 }
-.learn-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px auto;
-    max-width: 900px;
-}
-
 .learn-images img {
     width: 400px;
     height: auto;
     object-fit: contain;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    transition: 0.25s;
+}
+
+.learn-images img:hover {
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(33, 183, 228, 0.316);
 }
