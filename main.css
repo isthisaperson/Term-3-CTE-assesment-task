@@ -1048,3 +1048,44 @@ issue was that box shadow would just put a rectangle around the perimeter of the
     background: white;
     transition: all 0.25s ease;
 }
+
+.components-section {
+    text-align: center;
+    padding: 70px 0;
+    overflow: hidden;
+}
+
+.components-section h2 {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.components-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.components-track {
+    display: flex;
+    width: max-content;
+    animation: move-components 25s linear infinite;
+}
+
+.components-track img {
+    width: 6907px;
+    max-width: none;
+    display: block;
+}
+
+@keyframes move-components {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-6907px);
+    }
+
+}
